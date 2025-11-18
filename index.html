@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Agenor Filho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Web Designer</div>
+            
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-column left-column">
+                <h3 class="column-title">Agenor Filho</h3>
+
+                <div class="profile-circle-container">
+                    <div class="profile-circle">
+                        <img src="imagens/Agenor_formal.png" alt="Agenor Filho" class="profile-image">
+                    </div>
+                </div>
+
+                <div class="text-content">
+                    <h1 class="main-title">
+                        Desenvolvedor
+                        <br>
+                        <span class="accent-text">Web Designer</span>
+                    </h1>
+
+                    <p class="description attention-grabber">
+                        Design bonito, navegação fácil e conteúdo que faz seu cliente dizer: “É isso que eu preciso!” Eu crio sites e landing pages que passam confiança,<br> destacam seu negócio e ajudam você a vender mais — tudo com agilidade, estratégia e atenção aos detalhes.
+                    </p>
+
+                    <button class="btn-primary" onclick="handleProjectsClick()">
+                        Ver Projetos
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-column right-column" id="rightColumn">
+                <h3 class="column-title">Agenor Filho</h3>
+
+                <div class="image-container" id="imageContainer">
+                    <img src="imagens/Agenor_formal.png" alt="Development Setup" class="featured-image">
+                    <div class="image-overlay" id="imageOverlay"></div>
+                </div>
+
+                <div class="hover-info">
+                    <div class="hover-label">Faça seu site comigo.</div>
+
+                    <div class="hover-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 16 12 12 8 16"></polyline>
+                            <line x1="12" y1="12" x2="12" y2="21"></line>
+                            <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path>
+                        </svg>
+                        <span>Seu site,é seu vendedor 24 hrs</span>
+                    </div>
+
+                    <div class="hover-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="2" y1="20" x2="22" y2="20"></line>
+                        </svg>
+                        <span>Entre em contato Cel/WhatsApp: <br> (13) 98201-8522</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            Estrutura Baseada no Código HTML with CSS e JavaScript
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
