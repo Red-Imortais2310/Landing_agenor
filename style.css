@@ -355,7 +355,7 @@ body {
    RESPONSIVIDADE
    ============================================ */
 
-@media (max-width: 768px) {
+   @media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -383,6 +383,12 @@ body {
     .image-container {
         height: 200px;
     }
+    
+    /* 🚨 CORREÇÃO DE IMAGEM MOBILE (foca no topo) */
+    .hero-column .featured-image {
+        object-position: top;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -417,11 +423,17 @@ body {
     .image-container {
         height: 150px;
     }
+    
+    /* Garante que a regra é aplicada mesmo nas telas menores */
+    .hero-column .featured-image {
+        object-position: top;
+    }
 
     .hover-item {
         font-size: var(--font-size-sm);
     }
 }
+/* ... (O restante do seu CSS, incluindo o Efeito de Atenção, permanece inalterado) ... */
 
 /* ============================================
    EFEITO DE ATENÇÃO (ATENÇÃO GRABBER) - MODIFICAÇÃO APLICADA
