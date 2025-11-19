@@ -270,8 +270,15 @@ body {
 
 .image-container {
     position: relative;
-    width: 100%;
-    height: 280px;
+    
+    /* 🚨 DIMINUI A LARGURA PARA 80% NO DESKTOP E CENTRALIZA */
+    width: 80%; 
+    margin: 0 auto; 
+    
+    /* 🚨 DEFINE ALTURA POR PROPORÇÃO (70% de padding-top para ser mais compacto) */
+    height: 0; 
+    padding-top: 70%;
+    
     border-radius: var(--radius-md);
     border: 2px solid var(--accent-cyan);
     overflow: hidden;
@@ -285,18 +292,28 @@ body {
 }
 
 .featured-image {
+    /* Faz a imagem ocupar o espaço definido pelo padding-top */
+    position: absolute; 
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+
+    /* 🚨 NOVO: Garante que a imagem caiba inteira (contain) e é centralizada */
+    object-fit: contain; 
+    object-position: center; 
+    
     transition: filter var(--transition-normal);
 }
 
 .image-overlay {
+    /* Ajustado para ser absolute e cobrir o container Aspect Ratio */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    
     background: linear-gradient(to top, rgba(15, 20, 25, 0.8), transparent);
     opacity: 1;
     transition: opacity var(--transition-normal);
@@ -355,7 +372,7 @@ body {
    RESPONSIVIDADE
    ============================================ */
 
-   @media (max-width: 768px) {
+@media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -379,16 +396,19 @@ body {
         width: 150px;
         height: 150px;
     }
-
+    
+    /* 🚨 MOBILE: Ocupa largura total e usa proporção mais alta */
     .image-container {
-        height: 200px;
+        width: 100%; /* Ocupa toda a largura da coluna */
+        margin: 0; /* Remove a margem de centralização */
+        height: 0; 
+        padding-top: 80%; /* Proporção de altura ligeiramente maior que desktop */
     }
-    
-    /* 🚨 CORREÇÃO DE IMAGEM MOBILE (foca no topo) */
-    .hero-column .featured-image {
-        object-position: top;
+
+    .featured-image {
+        object-fit: contain; 
+        object-position: center;
     }
-    
 }
 
 @media (max-width: 480px) {
@@ -420,20 +440,23 @@ body {
         height: 120px;
     }
 
+    /* 🚨 MOBILE: Ocupa largura total e usa proporção ainda maior para telas menores */
     .image-container {
-        height: 150px;
+        width: 100%;
+        margin: 0;
+        height: 0;
+        padding-top: 90%; /* Proporção de altura um pouco maior para telas menores */
     }
     
-    /* Garante que a regra é aplicada mesmo nas telas menores */
-    .hero-column .featured-image {
-        object-position: top;
+    .featured-image {
+        object-fit: contain;
+        object-position: center;
     }
 
     .hover-item {
         font-size: var(--font-size-sm);
     }
 }
-/* ... (O restante do seu CSS, incluindo o Efeito de Atenção, permanece inalterado) ... */
 
 /* ============================================
    EFEITO DE ATENÇÃO (ATENÇÃO GRABBER) - MODIFICAÇÃO APLICADA
