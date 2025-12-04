@@ -1,0 +1,494 @@
+/* ============================================
+   RESET E VARIÁVEIS GLOBAIS
+   ============================================ */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores */
+    --bg-primary: #0f1419;
+    --bg-secondary: #1a1f2e;
+    --bg-tertiary: #252d3d;
+    --text-primary: #e6e6e6;
+    --text-secondary: #a0a0a0;
+    --accent-cyan: #00d4ff;
+    --accent-cyan-light: #00e5ff;
+    --accent-cyan-dark: #00b8d4;
+    --border-color: rgba(255, 255, 255, 0.1);
+    
+    /* Tipografia */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 48px;
+    
+    /* Espaçamento */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Raio de borda */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    /* Transições */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+}
+
+/* ============================================
+   ESTILOS BASE
+   ============================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+}
+
+/* ============================================
+   NAVEGAÇÃO
+   ============================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(15, 20, 25, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: color var(--transition-normal);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent-cyan);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-cyan);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   SEÇÃO HERO
+   ============================================ */
+
+.hero {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background-color: var(--bg-primary);
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.hero-column {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+.left-column {
+    justify-content: space-between;
+}
+
+.right-column {
+    justify-content: space-between;
+}
+
+.column-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   COLUNA ESQUERDA
+   ============================================ */
+
+.profile-circle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+    flex: 1;
+    align-items: center;
+}
+
+.profile-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-cyan);
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+    }
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-content {
+    text-align: center;
+}
+
+.main-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.accent-text {
+    color: var(--accent-cyan);
+}
+
+.description {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background-color: var(--accent-cyan);
+    color: var(--bg-primary);
+    border: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-cyan-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform var(--transition-normal);
+}
+
+.btn-primary:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* ============================================
+   COLUNA DIREITA
+   ============================================ */
+
+.image-container {
+    position: relative;
+    
+    /* 🚨 DIMINUI A LARGURA PARA 80% NO DESKTOP E CENTRALIZA */
+    width: 80%; 
+    margin: 0 auto; 
+    
+    /* 🚨 DEFINE ALTURA POR PROPORÇÃO (70% de padding-top para ser mais compacto) */
+    height: 0; 
+    padding-top: 70%;
+    
+    border-radius: var(--radius-md);
+    border: 2px solid var(--accent-cyan);
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    cursor: pointer;
+    transition: transform var(--transition-normal);
+}
+
+.image-container:hover {
+    transform: scale(1.03);
+}
+
+.featured-image {
+    /* Faz a imagem ocupar o espaço definido pelo padding-top */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 🚨 NOVO: Garante que a imagem caiba inteira (contain) e é centralizada */
+    object-fit: contain; 
+    object-position: center; 
+    
+    transition: filter var(--transition-normal);
+}
+
+.image-overlay {
+    /* Ajustado para ser absolute e cobrir o container Aspect Ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: linear-gradient(to top, rgba(15, 20, 25, 0.8), transparent);
+    opacity: 1;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 0;
+}
+
+.hover-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.hover-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.hover-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background-color: var(--bg-secondary);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .nav-links {
+        gap: var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+
+    .main-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-column {
+        min-height: auto;
+        padding: var(--spacing-lg);
+    }
+
+    .profile-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* 🚨 MOBILE: Ocupa largura total e usa proporção mais alta */
+    .image-container {
+        width: 100%; /* Ocupa toda a largura da coluna */
+        margin: 0; /* Remove a margem de centralização */
+        height: 0; 
+        padding-top: 80%; /* Proporção de altura ligeiramente maior que desktop */
+    }
+
+    .featured-image {
+        object-fit: contain; 
+        object-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .hero-column {
+        padding: var(--spacing-lg);
+    }
+
+    .main-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .profile-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* 🚨 MOBILE: Ocupa largura total e usa proporção ainda maior para telas menores */
+    .image-container {
+        width: 100%;
+        margin: 0;
+        height: 0;
+        padding-top: 90%; /* Proporção de altura um pouco maior para telas menores */
+    }
+    
+    .featured-image {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .hover-item {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* ============================================
+   EFEITO DE ATENÇÃO (ATENÇÃO GRABBER) - MODIFICAÇÃO APLICADA
+   ============================================ */
+
+.attention-grabber {
+    /* Define as propriedades para o efeito de digitação */
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Animação: typing por 4s, seguido de blink-caret */
+    border-right: 3px solid var(--accent-cyan);
+    animation: typing 4s steps(80, end) forwards,
+               blink-caret 0.75s step-end infinite alternate 4.2s;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-cyan); }
+}
+
+/* Garante quebra de linha e desativa animação em telas menores */
+@media (max-width: 768px) {
+    .attention-grabber {
+        white-space: normal;
+        animation: none;
+        border-right: none;
+        width: auto;
+    }
+}
