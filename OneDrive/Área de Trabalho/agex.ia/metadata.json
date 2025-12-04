@@ -1,0 +1,5 @@
+{
+  "name": "Agex.Ia",
+  "description": "Um assistente de pesquisa acadêmica com IA para ajudá-lo a analisar documentos, resumir pontos-chave e descobrir novas percepções. Desenvolvido com Google Gemini.",
+  "requestFramePermissions": []
+}
